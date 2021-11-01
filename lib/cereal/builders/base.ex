@@ -20,7 +20,7 @@ defmodule Cereal.Builders.Base do
   end
   def build(%{serializer: serializer, data: data, opts: opts} = context) do
     opts = parse_opts(opts)
-    data = serializer.preload(data, context.conn, Map.get(opts, :include, []))
+    # data = serializer.preload(data, context.conn, Map.get(opts, :include, []))
     context = %{context | data: data, opts: opts}
 
     struct(__MODULE__, %{})
